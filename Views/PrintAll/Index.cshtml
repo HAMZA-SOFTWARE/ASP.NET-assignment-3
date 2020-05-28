@@ -1,0 +1,37 @@
+﻿@model List<Employee>
+<link rel="stylesheet" href="~/Content/StyleSheet1.css" />
+<h2 style="text-align: center">All Employees List</h2>
+<button style="float:left" onclick="window.location.href='/HOME';">Back to DashBoard</button>
+<br />
+<table class="table1" border="1">
+    <tr>
+        <td><strong>Employee Id</strong></td>
+        <td><strong>Employee Name</strong></td>
+        <td><strong>Employee Salary</strong></td>
+        <td><strong>Employee Department</strong></td>
+        <td><strong>Employee Address</strong></td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.EmpName</td>
+            <td>@item.EmpSalary</td>
+            <td>@item.EmpDept</td>
+            <td>@item.EmpAddress</td>
+            <td>
+                <form method="post" action="/update/UpdateEMP">
+                    <input type="hidden" name="empID" value="@item.Id">
+                    <input type="hidden" name="empName" value="@item.EmpName" />
+                    <input type="hidden" name="empSal" value="@item.EmpSalary" />
+                    <input type="hidden" name="empDept" value="@item.EmpDept" />
+                    <input type="hidden" name="empAddress" value="@item.EmpAddress" />
+                    <input type="submit" value="UPDATE EMPLOYEE" />
+                </form>
+            </td>
+
+        </tr>
+    }
+
+</table>

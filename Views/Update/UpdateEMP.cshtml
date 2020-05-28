@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UpdateEMP</title>
+    <link rel="stylesheet" href="~/Content/StyleSheet1.css" />
+</head>
+<body>
+    <h2 style="text-align: center">All Employees List</h2>
+    <br />
+    <button style="float:left" onclick="window.location.href='/DashBoard';">Back to DashBoard</button>
+
+    <br />
+    <br />
+
+    <table class="table1">
+        <form method="post" action="/update/updateEmployee">
+            <input type="hidden" name="empID" value="@ViewBag.empID">
+            <tr>
+                <td>Employee Name</td>
+                <td>
+                    <input type="text" id="empName" name="empName" value="@ViewBag.empName" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Employee Salary</td>
+                <td>
+                    <input type="text" id="empSal" name="empSal" value="@ViewBag.empsal" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Employee Department</td>
+                <td>
+                    <input type="text" id="empDept" name="empDept" value="@ViewBag.empDept" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>Employee Address</td>
+                <td> <input type="text" id="empAddress" name="empAddress" value="@ViewBag.empAddress" /> </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <center> <input type="submit" value="Update Employee"> </center>
+                </td>
+            </tr>
+        </form>
+
+
+    </table>
+
+
+
+</body>
+</html>
